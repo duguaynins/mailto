@@ -8,7 +8,7 @@
 <body>
     <h1 translate="no">© 2024 NINS. 👻</h1>
     <!--h1>Preparing your email...</h1-->
-    <p id="message">If you are not redirected automatically, please check if your browser allows opening the email client.</p>
+    <p id="message">📌 If you really need a shorter email redirect link, you can contact me.</p>
     <!--script>
         // Try to read the parent page’s referrer
         console.log("Parent page info:", document.referrer);
@@ -62,10 +62,10 @@
 
             // Show message to user
             ///document.getElementById('message').innerText = `The email will be sent to: ${recipient}. Please make sure your email client is open.`;
-            document.getElementById('message').innerText = `The recipient email will be pre-filled. If it fails, the redirect will not occur. In that case, please copy this email address to contact (${recipient}).`;
+            document.getElementById('message').innerText = `📧 The recipient email will be pre-filled. If it fails, the redirect will not occur. In that case, please copy this email address to contact (${recipient}).`;
         } else {
             // Missing required recipient parameter
-            document.getElementById('message').innerHTML = 'Error: Missing recipient email address in the URL parameter (?who=...).';
+            document.getElementById('message').innerHTML = '⚠️ Missing recipient email address in the URL parameter (?who=...).';
         }
     </script>
 </body>
