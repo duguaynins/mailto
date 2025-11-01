@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--title>Redirecting to Email Client...</title-->
+    <title>nins/mailto</title>
+</head>
+<body>
+    <h1>Preparing your email...</h1>
+    <p id="message">If you are not redirected automatically, please check if your browser allows opening the email client.</p>
+
+    <script>
+        // 1. Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // 2. Read the 'redirect' parameter as recipient ID
+        const recipient = urlParams.get('redirect');
+        ///const recipient = urlParams.get('to');
+        
+        // Read 'subject' and 'body' parameters
+        const subject = urlParams.get('subject');
+        const body = urlParams.get('body');
+
+        if (recipient) {
+            // 3. Build the mailto link
+            let mailtoUrl = `mailto:${recipient}`;
+
+            // Check if subject or body exist, then add them
+            const params = [];
+            if (subject) {
+                // Encode special characters for safe URL transmission
+                params.push(`subject=${encodeURIComponent(subject)}`);
+            }
+            if (body) {
+                params.push(`body=${encodeURIComponent(body)}`);
+            }
+
+            // If there are parameters, append them with '?'
+            if (params.length > 0) {
+                mailtoUrl += '?' + params.join('&');
+            }
+
+            // 4. Redirect to mailto link
+            // This triggers the mailto protocol
+            window.location.href = mailtoUrl;
+
+            // Show message to user
+            document.getElementById('message').innerText = `The email will be sent to: ${recipient}. Please make sure your email client is open.`;
+        } else {
+            // Missing required recipient parameter
+            document.getElementById('message').innerHTML = 'Error: Missing recipient email address (`?to=...`) parameter.';
+        }
+    </script>
+</body>
+</html>
