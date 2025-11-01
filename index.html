@@ -9,7 +9,14 @@
     <h1>Preparing your email...</h1>
     <p id="message">If you are not redirected automatically, please check if your browser allows opening the email client.</p>
     <script>
-        console.log("父頁資訊：", document.referrer);
+        // Try to read the parent page’s referrer
+        console.log("Parent page info:", document.referrer);
+    
+        // Also display it on the page for easier observation
+        const ref = document.referrer || "Unable to retrieve (possibly restricted by browser or settings)";
+        const p = document.createElement("p");
+        p.textContent = "Parent page referrer: " + ref;
+        document.body.appendChild(p);
     </script>
     <script>
         // 1. Get URL parameters
