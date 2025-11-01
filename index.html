@@ -23,12 +23,14 @@
         const urlParams = new URLSearchParams(window.location.search);
 
         // 2. Read the 'redirect' parameter as recipient ID
+        const recipient = urlParams.get('who');
         ///const recipient = urlParams.get('redirect');
         ///const recipient = urlParams.get('to');
+        /*
         const recipient = urlParams.get('redirect') 
                        || urlParams.get('who') 
                        || urlParams.get('go')
-                       || urlParams.get('to');
+                       || urlParams.get('to');*/
         
         // Read 'subject' and 'body' parameters
         const subject = urlParams.get('subject');
@@ -61,7 +63,7 @@
             document.getElementById('message').innerText = `The email will be sent to: ${recipient}. Please make sure your email client is open.`;
         } else {
             // Missing required recipient parameter
-            document.getElementById('message').innerHTML = 'Error: Missing recipient email address (`?to=...`) parameter.';
+            document.getElementById('message').innerHTML = 'Error: Missing recipient email address (`?who=...`) parameter.';
         }
     </script>
 </body>
