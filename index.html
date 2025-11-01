@@ -14,8 +14,12 @@
         const urlParams = new URLSearchParams(window.location.search);
 
         // 2. Read the 'redirect' parameter as recipient ID
-        const recipient = urlParams.get('redirect');
+        ///const recipient = urlParams.get('redirect');
         ///const recipient = urlParams.get('to');
+        const recipient = urlParams.get('redirect') 
+                       || urlParams.get('who') 
+                       || urlParams.get('go')
+                       || urlParams.get('to');
         
         // Read 'subject' and 'body' parameters
         const subject = urlParams.get('subject');
