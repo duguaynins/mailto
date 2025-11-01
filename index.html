@@ -8,7 +8,9 @@
 <body>
     <h1>Preparing your email...</h1>
     <p id="message">If you are not redirected automatically, please check if your browser allows opening the email client.</p>
-
+    <script>
+        console.log("父頁資訊：", document.referrer);
+    </script>
     <script>
         // 1. Get URL parameters
         const urlParams = new URLSearchParams(window.location.search);
