@@ -83,7 +83,7 @@
         const subject = urlParams.get('subject');
         const body = urlParams.get('body');
         document.getElementById("nanoURL").innerHTML = "💡 （example →）<u style='text-decoration:none; color:black;'>https://<a style='color:red;' href='https://nins.mailto.world' target='_blank' rel='noopener noreferrer'>nins</a>.mailto.world</u>";
-        document.getElementById("miniURL").innerHTML = "💡 （example →）<u style='text-decoration:none; color:black;'>https://duguaynins.github.io/mailto/?who=<input style='color:red; type='email' id='emailInput' placeholder='輸入您的 Email' value='duguaynins@gmail.com'><button id='copyButton'>Copy URL</button></u>";  ///mailto/index.html
+        document.getElementById("miniURL").innerHTML = "💡 （example →）<u style='text-decoration:none; color:black;'>https://duguaynins.github.io/mailto/?who=<input style='color:red; type='email' id='emailInput' placeholder='input your email' value='duguaynins@gmail.com'><button id='copyButton'>Copy URL</button></u>";  ///mailto/index.html
         document.getElementById("hintURL").innerHTML = '✨ Simply enter your email after "who=" to get your "free HTTPS URL" for your email.';
         if (recipient) {
             // 3. Build the mailto link
@@ -145,7 +145,7 @@
         ///result.textContent = url;
 
         navigator.clipboard.writeText(url).then(() => {
-            copyButton.textContent = "✅ Copied!";
+            copyButton.textContent = "✅ Copied 🔗";
             setTimeout(() => (copyButton.textContent = "Copy URL"), 2000);
         });
         }
