@@ -11,7 +11,9 @@
     <h1 translate="no">© 2024 NINS. 👻</h1>
     <!--h1>Preparing your email...</h1-->
     <p id="system">📌 If you really need a shorter email redirect link, you can contact us (duguaynins@gmail.com).</p>
+    <p id="nanoURL">💡 ...!</p>
     <p id="message">💬 ...!</p>
+    <p id="miniURL">💡 ...!</p>
     <!--script>
         // Try to read the parent page’s referrer
         console.log("Parent page info:", document.referrer);
@@ -39,6 +41,8 @@
         // Read 'subject' and 'body' parameters
         const subject = urlParams.get('subject');
         const body = urlParams.get('body');
+        document.getElementById("nanoURL").innerText = "💡 https://nins.mailto.world";
+        document.getElementById("miniURL").innerText = "💡 https://duguaynins.github.io/mailto/?who=duguaynins@gmail.com";  ///mailto/index.html
 
         if (recipient) {
             // 3. Build the mailto link
