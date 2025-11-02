@@ -8,6 +8,7 @@
     <title>nins/mailto</title>
 </head>
 <body>
+
     <h1 translate="no">© 2024 NINS. 👻</h1>
     <!--h1>Preparing your email...</h1-->
     <p id="system">📌 If you really need a shorter email redirect link, you can contact us (duguaynins@gmail.com).</p>
@@ -15,6 +16,12 @@
     <p id="message">💬 ...!</p>
     <p id="miniURL" translate="no">💡 ...!</p>
     <p id="hintURL">✨ ...!</p>
+    
+    <!-- 翻譯小工具容器（放在頁面任意地方） -->
+    <div id="google_translate_wrapper">
+      <div id="google_translate_element"></div>
+    </div>
+    
     <!--script>
         // Try to read the parent page’s referrer
         console.log("Parent page info:", document.referrer);
@@ -76,5 +83,20 @@
             document.getElementById('message').innerHTML = '⚠️ Missing recipient email address in the URL parameter (?who=...).';
         }
     </script>
+
+    <!-- ============= Google Translate widget ============= -->
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'en',            // 你的原始頁面語言 (可改為 'zh-TW'、'auto' 等)
+          autoDisplay: false,
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+          // includedLanguages: 'zh-TW,zh-CN,en,ja,ko' // 可限制顯示的語言列表 (選用)
+        }, 'google_translate_element');
+      }
+    </script>
+    <!-- 請使用 HTTPS 來源 (或 protocol relative) -->
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!-- ================================================== -->
 </body>
 </html>
