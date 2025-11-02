@@ -6,6 +6,37 @@
   
     <!--title>Redirecting to Email Client...</title-->
     <title>nins/mailto</title>
+    <!-- 可選：簡單 CSS 調整翻譯小工具外觀（可自訂） -->
+    <style>
+        
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;  /* 垂直置中 */
+            align-items: center;      /* 水平置中 */
+            text-align: center;       /* 文字置中 */
+        }
+        /* 將翻譯小工具放到右上角，簡單樣式 */
+        #google_translate_wrapper {
+            position: fixed;
+            right: 12px;
+            /*top: 12px;*/
+            bottom: 12px; /* ✅ 改這裡：由 top 改為 bottom */
+            z-index: 9999;
+            background: rgba(255,255,255,0.95);
+            border-radius: 6px;
+            padding: 6px 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+            font-size: 13px;
+        }
+        /* option: 隱藏自動顯示的標題文字（如果你不喜歡）*/
+        .goog-te-banner-frame.skiptranslate { display: none !important; }
+        body { top: 0px !important; }
+    </style>
 </head>
 <body>
 
