@@ -145,7 +145,7 @@
         ///result.textContent = url;
 
         navigator.clipboard.writeText(url).then(() => {
-            copyButton.textContent = "✅ 已複製！";
+            copyButton.textContent = "✅ Copied!";
             setTimeout(() => (copyButton.textContent = "Copy URL"), 2000);
         });
         }
