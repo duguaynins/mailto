@@ -293,8 +293,8 @@
     </script>
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <!-- ================================================== -->
-    
-    
+
+
     <script>
         function checkUriData(uriData) {
             let redirect = null;
@@ -346,7 +346,7 @@
                        || urlParams.get('who') 
                        || urlParams.get('go')
                        || urlParams.get('to');*/
-        
+
         //redirect = checkUriData(recipient);
         redirect = true;
 
@@ -355,8 +355,8 @@
         const body = urlParams.get('body');
         ///document.getElementById("nanoURL").innerHTML = "💡 （example →）<a style='text-decoration:none; color:black;' href='https://nins.mailto.world' target='_blank' rel='noopener noreferrer'>https://<u style='color:red;'>nins</u>.mailto.world</a>";
         document.getElementById("miniURL").innerHTML = "💡 <u style='text-decoration:none; color:black;'>https://duguaynins.github.io/mailto/?who=<input style='color:red;' type='text' id='informationInput' placeholder='' value='' size='35'> <button id='copyButton'>Copy URL 🔗</button></u>";  ///mailto/index.html
-        ///document.getElementById("hintURL").innerHTML = '✨ Simply enter your information after "who=" to get your "free HTTPS URL" for your information.';
-        
+        document.getElementById("hintURL").innerHTML = '✨ Simply enter your information after "who=" to get your "free HTTPS URL" for your information.';
+
         if (recipient) {
             // 3. Build the mailto link
             let mailtoUrl = `mailto:${recipient}`;
@@ -395,17 +395,17 @@
             ///document.getElementById('message').innerHTML = `📧 The recipient information will be pre-filled. If it fails, the redirect will not occur. In that case, please use this information to contact (${recipient}).`;
             if (recipient === null) { console.log('✅'); }
             else { document.getElementById('message').innerHTML = `✅ Fallback redirect is active and the page is locked. The page can be visited at <a href='https://duguaynins.github.io/mailto/?who=' translate="no">https://mailto.work</a> 🌐.`; }
-            
+
             if (!redirect) { document.getElementById('message').innerHTML = '⚠️ This is not mailto/tel/sms.'; }
         } else {
             // Missing required recipient parameter
             if (recipient === null) { console.log('✅'); }
             else { document.getElementById('message').innerHTML = '⚠️ Missing recipient information in the URL parameter (?who=...).'; }
-            
+
         }
     </script>
     <!-- ================================================== -->
-    
+
     <script>
         ///複製與回車***
 
@@ -460,8 +460,9 @@
 
         // 提示文字清單
         const placeholders = [
-            "+886-909095800",
-            "+886-909095800,0000",
+            "duguaynins@gmail.com",
+            "duguaynins@gmail.com?subject=nins?nins!",
+            ///"duguaynins@gmail.com?subject=nins?nins!&body=",
         ];
 
         let index = 0;
